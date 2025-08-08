@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>no1eat 的个人主页</title>
+    <style>
+        /* 1. 引入本地字体文件（与 index.html 同级目录） */
+        @font-face {
+            font-family: "AlibabaPuHuiTi";
+            src: url("Alibaba_PuHuiTi_2.0_55_Regular_55_Regular.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 2. 使用 sun.jpg 做全屏背景 */
+        html,
+        body {
+            height: 100%;
+            margin: 0
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background: url("img/sun.jpg") no-repeat center/cover;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-x: hidden;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            margin: auto;
+            width: 900px;
+            background: rgba(0, 0, 0, .45);
+            border-radius: 40px;
+            z-index: -1;
+        }
+
+        .wrapper {
+            position: relative;
+            display: flex;
+            gap: 40px;
+            padding: 40px 0;
+            align-items: flex-start;
+        }
+
+        /* 左侧 */
+        .left {
+            flex: 0 0 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 26px
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #fff3
+        }
+
+        .box {
+            background: rgba(0, 0, 0, .35);
+            border-radius: 12px;
+            padding: 20px;
+            width: 260px
+        }
+
+        .box h3 {
+            margin-bottom: 10px;
+            text-align: center
+        }
+
+        /* 让个人信息内容靠左 */
+        .info ul {
+            list-style: none;
+            text-align: left;
+            padding-left: 20px;
+            /* 与框边缘留一点距离 */
+        }
+
+        .info li {
+            margin: 4px 0;
+            font-size: 1rem
+        }
+
+        /* 时间轴 */
+        .timeline {
+            position: relative;
+            padding-left: 30px
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, .4)
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 15px 0;
+            font-size: .95rem
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            border-radius: 50%
+        }
+
+        /* 右侧 */
+        .right {
+            flex: 1 1 0;
+            display: flex;
+            flex-direction: column
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 0
+        }
+
+        .card {
+            background: rgba(0, 0, 0, .35);
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform .3s;
+            transform-origin: center
+        }
+
+        .card:hover {
+            transform: scale(1.03)
+        }
+
+        .intro h2 {
+            margin-bottom: 6px;
+            font-size: 1.6rem
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            opacity: .9
+        }
+
+        /* 彩色文字 + 本地字体 */
+        .colorful {
+            font-family: "AlibabaPuHuiTi", sans-serif;
+            background: linear-gradient(90deg, #ff6ec4, #45b7ff, #43e97b, #f9ca24, #ff6ec4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .aaa {
+            height: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <div class="left">
+            <img src="img/avatar.png" class="avatar" alt="头像">
+            <div class="box info">
+                <h3>个人信息</h3>
+                <ul>
+                    <li>地区：神界</li>
+                    <li>宗门：剑宗</li>
+                    <li>身份：宗主</li>
+                    <li>修为：神帝境修士</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>时间轴</h3>
+                <div class="timeline">
+                    <div class="timeline-item">2025.8.5 编写网站</div>
+                    <div class="timeline-item">2025.8.6 修改网页</div>
+                    <div class="timeline-item">2023.8.7 躺平</div>
+                    <div class="timeline-item">2025.8.8 网站上线</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="intro">
+                <h2>Hello I'm <span class="colorful">No1eat</span></h2>
+                <p>The only way to do great work is to love what you do.</p>
+                <br>
+                <div class="aaa"></div>
+            </div>
+            <div class="card-grid">
+                <a href="https://github.com/no1eat" target="_blank">
+                    <div class="card">gethub</div>
+                </a>
+                <a href="https://mail.qq.com/">
+                    <div class="card">email</div>
+                </a>
+                <a href="https://space.bilibili.com/1360344914" target="_blank">
+                    <div class="card">bilibili主页</div>
+                </a>
+                <a href="111.zip">
+                    <div class="card">下载</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
